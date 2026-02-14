@@ -34,7 +34,9 @@ Semantic Search / Analysis
 
 ## Pipeline Design
 Data extraction: Powershell to move all documents to root of folder, uploaded to foundry as media set
+
    <sup><sub>Initial direct uplaod failed even after cleaning</sub></sup>
+   
 Course I used to help do LLM transform/data cleaning: 
 https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
 1. OCR (Reading from handwriting) or raw?? I decided to do RAW first and later will split and do OCR for items that did not work 
