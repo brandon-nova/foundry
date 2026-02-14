@@ -41,7 +41,11 @@ Course I used to help do LLM transform/data cleaning:
 https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
 1. OCR (Reading from handwriting) or raw?? I decided to do RAW first and later will split and do OCR for items that did not work 
 2. Explode Array with Position (turns each page into a row)
-3. Extract Many Struct Fields (seperate position [page number] and element [content]
+3. Extract Many Struct Fields (seperate position [page number] and element [content]. We now have the below as output
+<img width="3092" height="862" alt="image" src="https://github.com/user-attachments/assets/7877418c-b007-4a82-99bb-368a272717c0" />
+
+4. 
+5. 
 
 ## Implementation Steps
 
