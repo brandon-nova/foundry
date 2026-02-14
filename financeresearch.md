@@ -20,6 +20,7 @@ Technical Objhective: Create a workshop or slate in Foundry demonstrating final 
 I was given a flashdrive with 4ish GB of PDFs and other documents of pension fund data. 
 
 ## Architecture
+```plaintext
 Media Set (PDFs)
     ↓
 Document Extraction
@@ -29,6 +30,7 @@ Chunking
 Embeddings / Summaries
     ↓
 Semantic Search / Analysis
+```
 
 ## Pipeline Design
 
