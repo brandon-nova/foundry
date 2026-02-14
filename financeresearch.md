@@ -1,4 +1,4 @@
-Finance Research: 
+<table><tr><td>Finance Research</td></tr></table>
 
 ## Table of Contents
 1. [Objective](#objective)
@@ -33,6 +33,13 @@ Semantic Search / Analysis
 ```
 
 ## Pipeline Design
+Data extraction: Powershell to move all documents to root of folder, uploaded to foundry as media set
+   <sup><sub>Initial direct uplaod failed even after cleaning</sub></sup>
+Course I used to help do LLM transform/data cleaning: 
+https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
+1. OCR (Reading from handwriting) or raw?? I decided to do RAW first and later will split and do OCR for items that did not work 
+2. Explode Array with Position (turns each page into a row)
+3. Extract Many Struct Fields (seperate position [page number] and element [content]
 
 ## Implementation Steps
 
