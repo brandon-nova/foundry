@@ -20,3 +20,30 @@ Export: Data is POSTed to an API or directly to an S3 bucket (using a signed URL
 Data Connection: Create an S3 Source in Foundry.
 Sync: Set up a Data Connection Task to ingest files hourly.
 Pipeline: Use Code Repositories to clean the raw data and build a "Time Audit" dashboard.
+
+
+<table border="0">
+ <tr>
+    <td><b style="font-size:30px">Title</b></td>
+    <td><b style="font-size:30px">Title 2</b></td>
+ </tr>
+ <tr>
+    <td>
+'''
+Chrome Extension
+        ↓
+API Gateway
+        ↓
+Lambda
+        ↓
+Foundry Stream Ingest API
+        ↓
+Stream-backed Dataset
+        ↓
+Streaming Pipeline
+'''
+      
+    </td>
+    <td>Lorem ipsum ...</td>
+ </tr>
+</table>
