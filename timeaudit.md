@@ -24,13 +24,12 @@ Pipeline: Use Code Repositories to clean the raw data and build a "Time Audit" d
 ##Data Architecture 
 <table border="0">
  <tr>
-    <td><b style="font-size:30px">Chrome Extention </b></td>
+    <td><b style="font-size:30px">Chrome Extension</b></td>
     <td><b style="font-size:30px">Web Script (Python)</b></td>
  </tr>
  <tr>
     <td>
-'''
-Chrome Extension
+<pre><code>Chrome Extension
         ↓
 API Gateway
         ↓
@@ -40,8 +39,7 @@ Foundry Stream Ingest API
         ↓
 Stream-backed Dataset
         ↓
-Streaming Pipeline
-'''
+Streaming Pipeline</code></pre>
     </td>
     <td>Lorem ipsum ...</td>
  </tr>
