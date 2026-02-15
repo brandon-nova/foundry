@@ -18,18 +18,34 @@ Technical Objhective: Create a workshop or slate in Foundry demonstrating final 
 
 ## Data Source
 I was given a flashdrive with 4ish GB of PDFs and other documents of pension fund data. 
+Documents include:
+    annual reports
+    investment results summaries
+    asset allocation disclosures
+    policy asset mix statements
+Source variability:
+    multiple languages (primarily Japanese & English)
+    mixed formatting styles
+    tables embedded as images or text
+Coverage spans multiple fiscal years
 
 ## Architecture
 ```plaintext
 Media Set (PDFs)
     ↓
-Document Extraction
+Text Extraction 
     ↓
-Chunking
+Page-level segmentation
     ↓
-Embeddings / Summaries
+Table detection & classification
     ↓
-Semantic Search / Analysis
+Structured extraction (LLM)
+    ↓
+Normalization & unit harmonization
+    ↓
+Ontology snapshot creation
+    ↓
+Workshop analytics & visualization
 ```
 
 ## Pipeline Design
@@ -39,25 +55,90 @@ Data extraction: Powershell to move all documents to root of folder, uploaded to
    
 Course I used to help do LLM transform/data cleaning: 
 https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
-1. OCR (Reading from handwriting) or raw?? I decided to do RAW first and later will split and do OCR for items that did not work 
-2. Explode Array with Position (turns each page into a row)
-3. Extract Many Struct Fields (seperate position [page number] and element [content]. We now have the below as output
+#### OCR (Reading from handwriting) 
+- decided to do RAW first and later will split and do OCR for items that did not work
+- 
+#### Explode Array with Position 
+- turns each page into a row
+
+#### Extract Many Struct Fields 
+- seperate position [page number] and element [content]. We now have the below as output
 <img width="3092" height="862" alt="image" src="https://github.com/user-attachments/assets/7877418c-b007-4a82-99bb-368a272717c0" />
 
-4. 
-5. Validation: 
+#### Filter likely allocation pages
+- keyword filtering (asset, allocation, equities, bonds)  
+- numeric density detection  
+- regex-based table heuristics  
+
+#### LLM classification
+- identifies pages containing allocation tables  
+- filters narrative-only pages  
+
+#### Structured allocation extraction
+- extract asset class values  
+- extract totals and currency  
+- enforce numeric-only output  
+
+#### Data cleaning & normalization
+- remove symbols and formatting artifacts  
+- standardize currency & numeric types  
+- normalize percent vs monetary values  
+
+#### Snapshot ID creation
+- composite key: fund + fiscal year + page  
+- ensures deterministic ontology instances  
+
+#### Ontology write
+- publish structured allocation snapshots  
+- enable downstream analytics  
+
+
 
 ## Implementation Steps
+- Standardized document ingestion into media set  
+- Built page-level dataset for fine-grained analysis  
+- Implemented heuristic filtering to reduce LLM load  
+- Added classification transform to isolate allocation tables  
+- Designed extraction prompt for structured financial data  
+- Implemented normalization logic for mixed units  
+- Created composite snapshot identifier  
+- Published ontology object type (`FundAllocationSnapshot`)  
+- Validated lineage from ontology object → page → source PDF  
 
 ## Configuration Decisions
 - Added a classification step to get pages that were allocation tables 
-- 
+- Switched LLM model after nano model failed to classify tables reliably  
+- Structured output as a single ontology object per fund-year snapshot  
+- Used snapshot write mode to maintain one authoritative record per period  
+- Retined page number & document path for auditability  
+- Chose classification-first strategy to reduce extraction cost  
 
 ## Performance & Runtime
+- Page-level filtering reduced LLM processing volume by >80%  
+- Classification step significantly lowered extraction token usage  
+- Snapshot writes minimize duplication and improve ontology query performance  
+- Pipeline scales linearly with document volume  
+- Runtime bottlenecks primarily occur during LLM extraction and ontology publish
+#### Was very slow, currently 12+ hours and pipeline not done, there was defenietly a way to do this more efficiency, though developer tier rate limit is a bottleneck 
 
 ## Validation & QA
+- One row worked in preview so i deployed 
 
 ## Troubleshooting
-1. LLM outputs for the classification step returned all null, this was fixed by changing the model type. 
-2. LLM outputs for allocation finder were all null, this was fixed by 
+### Classification returned NULL
+Cause: lightweight model insufficient for complex page text  
+Fix: switched to higher capability model  
+
+### Extraction returned NULL
+Cause: pages lacked allocation tables or contained narrative tables  
+Fix: improved classification filtering  
+
+### Mixed formatting & OCR artifacts
+Mitigation: numeric-only extraction + cleaning stage  
+
+### Percent vs monetary values
+Mitigation: post-processing logic using totals threshold  
+
+### Large document ingestion failures
+Workaround: flattened directory structure before upload
 
