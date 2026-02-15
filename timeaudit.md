@@ -21,7 +21,7 @@ Data Connection: Create an S3 Source in Foundry.
 Sync: Set up a Data Connection Task to ingest files hourly.
 Pipeline: Use Code Repositories to clean the raw data and build a "Time Audit" dashboard.
 
-##Data Architecture 
+## Data Architecture 
 <table border="0">
  <tr>
     <td><b style="font-size:30px">Chrome Extension</b></td>
