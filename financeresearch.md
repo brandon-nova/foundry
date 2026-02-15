@@ -45,16 +45,19 @@ https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
 <img width="3092" height="862" alt="image" src="https://github.com/user-attachments/assets/7877418c-b007-4a82-99bb-368a272717c0" />
 
 4. 
-5. 
+5. Validation: 
 
 ## Implementation Steps
 
 ## Configuration Decisions
+- Added a classification step to get pages that were allocation tables 
+- 
 
 ## Performance & Runtime
 
 ## Validation & QA
 
 ## Troubleshooting
-
+1. LLM outputs for the classification step returned all null, this was fixed by changing the model type. 
+2. LLM outputs for allocation finder were all null, this was fixed by 
 
