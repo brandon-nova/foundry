@@ -21,11 +21,11 @@ Data Connection: Create an S3 Source in Foundry.
 Sync: Set up a Data Connection Task to ingest files hourly.
 Pipeline: Use Code Repositories to clean the raw data and build a "Time Audit" dashboard.
 
-
+##Data Architecture 
 <table border="0">
  <tr>
-    <td><b style="font-size:30px">Title</b></td>
-    <td><b style="font-size:30px">Title 2</b></td>
+    <td><b style="font-size:30px">Chrome Extention </b></td>
+    <td><b style="font-size:30px">Web Script (Python)</b></td>
  </tr>
  <tr>
     <td>
@@ -42,7 +42,6 @@ Stream-backed Dataset
         ↓
 Streaming Pipeline
 '''
-      
     </td>
     <td>Lorem ipsum ...</td>
  </tr>
