@@ -51,7 +51,7 @@ Chrome extention -> API Gateway -> Lambda -> Foundry Endpoint -> Dataset -> Onto
 
 ### Schema 
 
-'''
+```sql
 event_id        STRING      (not nullable)
 user_id         STRING      (not nullable)
 domain          STRING      (not nullable)
@@ -60,4 +60,4 @@ end_ts          TIMESTAMP   (not nullable)
 duration_ms     LONG        (not nullable)
 reason_closed   STRING      (not nullable)
 schema_version  INTEGER     (not nullable)
-'''
+```
