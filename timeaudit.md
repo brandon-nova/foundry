@@ -50,6 +50,7 @@ Streaming Pipeline</code></pre>
 Chrome extention -> API Gateway -> Lambda -> Foundry Endpoint -> Dataset -> Ontology -> Workshop
 
 ### Schema 
+
 '''
 event_id        STRING      (not nullable)
 user_id         STRING      (not nullable)
