@@ -44,3 +44,19 @@ Streaming Pipeline</code></pre>
     <td>Lorem ipsum ...</td>
  </tr>
 </table>
+
+
+# Broswser Ingest
+Chrome extention -> API Gateway -> Lambda -> Foundry Endpoint -> Dataset -> Ontology -> Workshop
+
+### Schema 
+'''
+event_id        STRING      (not nullable)
+user_id         STRING      (not nullable)
+domain          STRING      (not nullable)
+start_ts        TIMESTAMP   (not nullable)
+end_ts          TIMESTAMP   (not nullable)
+duration_ms     LONG        (not nullable)
+reason_closed   STRING      (not nullable)
+schema_version  INTEGER     (not nullable)
+'''
