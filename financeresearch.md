@@ -128,6 +128,9 @@ https://learn.palantir.com/speedrun-your-e2e-aip-workflow/1961888
 ### Classification returned NULL
 Cause: lightweight model insufficient for complex page text  
 Fix: switched to higher capability model  
+### First attempt timed out 
+Cause: I made the pipeline end to end and it was running tens of thousands of rows which each had a large content, wrote to an ontology, and I'm rate limited to 60-120k tokens per minute
+Fix: I split the pipe into seperate cleaning and writing pipes. I also wrote to dataset instead of ontology. 
 
 ### Extraction returned NULL
 Cause: pages lacked allocation tables or contained narrative tables  
