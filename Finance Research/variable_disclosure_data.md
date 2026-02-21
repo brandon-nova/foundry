@@ -1,4 +1,5 @@
 # Finding Variable Disclosures Accross Funds 
 
-> [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+> [ Overview ]
+> The next assignment was to find what funds did or didnt disclose variable wise, and to use one year (chose 2024)
+
