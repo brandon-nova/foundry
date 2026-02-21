@@ -1,5 +1,0 @@
-# Major Things I learned
-
-| Topic | Project | How I Learned |
-|------|--------|--------------|
-| AIP Timeout | Foundry for Research | After getting timed out (21+ hour run time, s3 key expired), changed model and did more aggressive filtering | 
