@@ -1,43 +1,27 @@
 # Overview of Foundry for Finance (Research)
 
 ## Problem
-What is broken, inefficient, inconsistent, or impossible?
+We have a lot of financial documents (pension fund annual reports) to parse, and it will take a lot of time. 
 
 ## Operator
-Who uses this system?
+The resultant data will be used by a finance PhD student I support
 
-Not “users.”
-Be specific: researcher, analyst, operator, yourself as planner.
-
-
-## Decision
-What decision changes because this exists?
-
-If there is no decision, it’s a demo.
-If there is a decision, it’s a system.
+## Result
+Speed up research 
 
 ## Architecture
-High-level flow only. No paragraphs.
-
-Example:
-Chrome Extension → API Gateway → Lambda → Foundry Stream →
-Pipeline → Ontology → Workshop
+Media Set → Pipeline → Dataset (no need to elevate to Ontology here) → Workshop
 
 ## Design Decisions & Tradeoffs
-
-3–5 bullets.
-Why streaming instead of batch?
-Why page-level splitting?
-Why union before ontology?
-Why LLM extraction?
-
-Tradeoffs signal maturity.
+ - Batch due to periodic static media set uploads
+ - Page level splitting as this is the lowest level chunk with unlikely splits
+ - No ontology elevation due to not needing action types
 
 ## Failure Modes / Production Considerations
-This is what separates you from students.
+ - Pipeline timeout at post 12 hours due to S3 key expiry, cannot use heavyweight llms to parse
+ - Visualization parsing was referencing media reference of entire document, need to split with code prior
+ - LLM parse scales poorly due to rate limits/using pages for chunks/lots of content
+ - Some documents are pure image, meaning ocr works but not raw text, all text is print no handwriting so good there
 
-What breaks?
-What scales poorly?
-What edge cases exist?
-
-What would you harden before deployment?
+Pre-deployment Considerations: 
+ - Check trial run to make sure reasonable time (didn't do that with Opus 4.6 trial run and got a time out)
