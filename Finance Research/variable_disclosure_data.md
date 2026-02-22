@@ -42,3 +42,9 @@ Task:
 | FI_F | Foreign FI Active Difference |
 | %Active | Total Active Difference |
 | p. | Page Number |
+
+
+# Thought Process 
+
+At first I was going to try to build a pipeline to find all the variables statuses at once. 
+ - Actually I still can why not, sinc eit will have page numbers reagrdless/ 
