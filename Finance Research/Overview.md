@@ -9,7 +9,6 @@ Who uses this system?
 Not “users.”
 Be specific: researcher, analyst, operator, yourself as planner.
 
-FDEs think in operators.
 
 ## Decision
 What decision changes because this exists?
