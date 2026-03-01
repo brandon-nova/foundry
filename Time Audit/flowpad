@@ -3,4 +3,8 @@ Alright so right now I have my data in hourly files.
 I want to see if I need to make sure they are all in the same filepath. Alright so i have an s3 bucket i want to pull data from, i want the pull to be incremental and only pull things into a pipeline that are not already there. what is the best wya to do this? the data is my computer activity, and the data is pushed from python every hour. right now i have a filepath for each day, and then each file is based off hour, but i dont think foundry is avbel to magically pull every file from it. 
 
 OH!!! I had to add the Use APPEND and add the filter Exclude files already synced. filter! 
+I added the dataset via rid to pipeline builder and see a bunch of parquets. 
+
+Then I was like how to combine these parquets? I tried to create a python UDF (user function) for pipeline builder, but that didnt work 
+The answer was in "Apply Schema" in the actual file itself!! 
 
