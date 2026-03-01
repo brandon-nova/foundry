@@ -8,3 +8,4 @@ I added the dataset via rid to pipeline builder and see a bunch of parquets.
 Then I was like how to combine these parquets? I tried to create a python UDF (user function) for pipeline builder, but that didnt work 
 The answer was in "Apply Schema" in the actual file itself!! 
 
+For browser it wouldnt let me do an application, user only since developer tier so directly adding api link in the chrome extension 
