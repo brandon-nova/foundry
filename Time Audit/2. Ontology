@@ -1,0 +1,7 @@
+# Ontology 
+
+I created two object types, domains and sessions. 
+
+
+Domain sheet (elevated to Ontology due to needing to create action types): 
+Make the write type append only, since in status quo the LLM would recompute all categories on each run (triggered on change of input dataset)
