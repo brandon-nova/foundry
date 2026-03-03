@@ -1,1 +1,10 @@
-f
+
+Workshop Nodes
+    * Time of daya allocation breakdown 
+    * Day of week allocation 
+    * Total Allocation 
+    * Top Domains/Groups (based off categorization)
+    * Top Shrinkage 
+    * Allow Reclassifying (Action Type button group)
+
+Overall filter to make sure only the latest week (7 days, not start of week to today) show 
