@@ -1,4 +1,9 @@
+# Main Workshop 
 
+
+## Summary Page is an aip logic which gives a rundown of what happened the last 7 days
+
+## Dashboard Page 
 Workshop Nodes
     * Time of daya allocation breakdown 
     * Day of week allocation 
@@ -8,3 +13,4 @@ Workshop Nodes
     * Allow Reclassifying (Action Type button group)
 
 Overall filter to make sure only the latest week (7 days, not start of week to today) show 
+
